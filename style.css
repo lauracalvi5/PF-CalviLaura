@@ -1,22 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: #f0f0f0;
 }
 
-.container {
-    margin-top: 20px;
-}
-
-.col-sm {
-    border: 1px solid #dee2e6;
-    padding: 20px;
-}
-
 header {
     background-color: #fff;
-    padding: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -40,16 +39,16 @@ header {
     
 }
 
-.logo {
+.navbar-brand.logo {
     width: 50px;
     height: 40px;
-    margin-top: -20px;
+    margin-top: -25px;
+    margin-bottom: 10px;
 }
 
-nav {
-    margin-left: 50px;
+.navbar-nav {
+    margin-left: 395px;
 }
-
 nav ul {
     list-style: none;
     margin: 0;
@@ -87,9 +86,10 @@ main {
     align-items: center;
     color: #fff;
     text-align: center;
+    margin-right: 15px;
 }
 
-.header-text {
+.portada-header-text {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
@@ -118,6 +118,10 @@ h2{
         text-align: left;
 }
 
+.portada-column {
+    padding-left: 10px; 
+}
+
 .portada-button {
 	width: 188px;
 	height: 42px;
@@ -132,10 +136,14 @@ h2{
 	font-weight: 700;
 	font-size: 12px;
 	text-align: center;
+    line-height: 40px
 }
 
 #portada-img {
-    margin-left: 280px; 
+    margin-left: 300px;
+    max-width: 100%;
+    height: auto; 
+    margin-top: -1px;
 }
 
 h3 {
@@ -162,6 +170,24 @@ h4 {
     display: block;
     margin: auto;
 }
+#destinos {
+    margin-top: 50px; 
+}
+.image-container img {
+    margin-bottom: 10px;
+  
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
 #sydney {
 	width: 180px;
 	height: 120px;
@@ -283,15 +309,14 @@ h4 {
     color: #0d141f;
     float: left;
 }
-
 #experiencias {
     background-color: #DFEDD6;
     width: 100%;
-   
-}
-
-h5 {
-	width: 510px;
+    padding: 50px 25px;
+  }
+  
+  #experiencias h5 {
+    width: 510px;
 	height: 31px;
 	color: #3B4754;
 	font-family: "Open Sans";
@@ -301,9 +326,10 @@ h5 {
 	text-align: center;
     display: block;
     margin: auto;
-}
-h6 {
-	width: 470px;
+  }
+  
+  #experiencias h6 {
+    width: 470px;
 	height: 51px;
 	color: #798DA3;
 	font-family: "Open Sans";
@@ -313,75 +339,55 @@ h6 {
 	text-align: center;
     display: block;
     margin: auto;
-}
-
-.cards {
-    width: 500px;
-    height: 300px;
-    margin: 0 165px 0 165px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.customer-quote {
-    width: 300px;
-    height: 200px;
-    margin: 0 20px 0 20px;
-    padding: 30px 30px 36px 30px;
-    background-color: #F2F2F2;
-}
-
-.quote {
-    width: 290px;
-    height: 84px;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #000000;
-}
-
-.avatar {
+  }
+  
+  #experiencias .card {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px; 
+    width: 100%;
+  }
+  
+  #experiencias .card-body {
+    padding: 20px;
+    overflow: auto;
+  }
+  
+  #experiencias .quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #experiencias .rounded-circle {
     width: 50px;
     height: 50px;
-    margin: 16px 120px 10px 120px;
-}
-
-.frame-2610301 {
-    width: 290px;
-    height: 48px;
-    margin: 0 30px 0 30px;
-}
-
-.name {
-    width: 57px;
-    height: 22px;
-    font-family: Poppins;
+  }
+  
+  #experiencias .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  #experiencias .ml-3 {
+    margin-left: 15px;
+  }
+  
+  #experiencias .name {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  #experiencias .profession {
+    color: #666;
+    margin: 0;
     font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-}
-
-.profession {
-    width: 68px;
-    height: 22px;
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000000;
-}
-
+  }
+  
 #consejos {
     width: 1440px;
     height: 1024px;
