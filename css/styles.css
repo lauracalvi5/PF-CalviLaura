@@ -17,56 +17,66 @@ header {
   background-color: #fff;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 10px 20px;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.header-button {
-  width: 100px;
-  height: 28px;
-  padding: 0 10px;
-  background: black;
-  color: white;
-  border: 1px solid black;
-  border-radius: 2px;
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 10px;
-  text-align: center;
-}
-
-.navbar-brand.logo {
+header .navbar-brand.logo {
   width: 50px;
-  height: 40px;
-  margin-top: -25px;
-  margin-bottom: 10px;
+  margin-right: 80px;
+  height: auto;
 }
-
-.navbar-nav {
-  margin-left: 395px;
+header .navbar-brand.logo img {
+  width: 100%;
+  height: auto;
 }
-
-nav ul {
+header nav ul.navbar-nav {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-nav li {
+header nav ul.navbar-nav li {
   margin-left: 30px;
 }
-nav li a {
+header nav ul.navbar-nav li:first-child {
+  margin-left: 0;
+}
+header nav ul.navbar-nav li a {
   display: block;
-  padding: 10px 15px;
+  padding: 10px 20px;
   text-decoration: none;
   color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
 }
-nav li a:hover {
-  background-color: #eee;
+header nav ul.navbar-nav li a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+header .header-button {
+  width: auto;
+  height: 28px;
+  padding: 0 15px;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+header .header-button:hover {
+  background-color: white;
+  color: black;
 }
 
 main {

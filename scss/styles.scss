@@ -24,59 +24,74 @@ header {
     background-color: #fff;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 10px 20px; // Añadido padding para margen interno
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-button {
-    width: 100px;
-    height: 28px;
-    padding: 0 10px;
-    background: black;
-    color: white;
-    border: 1px solid black;
-    border-radius: 2px;
-    font-family: "Open Sans";
-    font-weight: 700;
-    font-size: 10px;
-    text-align: center;
-}
-
-.navbar-brand.logo {
-    width: 50px;
-    height: 40px;
-    margin-top: -25px;
-    margin-bottom: 10px;
-}
-
-.navbar-nav {
-    margin-left: 395px;
-}
-
-nav {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra para el efecto visual
+    
+    .navbar-brand.logo {
+        width: 50px;
+        margin-right: 80px;
+        height: auto; // Ajuste automático para mantener proporción
+        img {
+            width: 100%;
+            height: auto; // Ajuste automático para mantener proporción
+        }
     }
-
-    li {
-        margin-left: 30px;
-        
-        a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #333;
-
-            &:hover {
-                background-color: #eee;
+    
+    nav {
+        ul.navbar-nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; // Centrado de elementos en nav
+            
+            li {
+                margin-left: 30px; // Ajustado para el diseño del prototipo
+                
+                &:first-child {
+                    margin-left: 0; // Sin margen en el primer elemento
+                }
+                
+                a {
+                    display: block;
+                    padding: 10px 20px; // Ajustado para el diseño del prototipo
+                    text-decoration: none;
+                    color: #333;
+                    font-family: "Open Sans", sans-serif; // Asegurando la fuente
+                    font-weight: 600; // Peso ajustado
+                    border-radius: 4px; // Bordes redondeados
+                    
+                    &:hover {
+                        background-color: #ddd; // Color de fondo al pasar el mouse
+                        color: #000; // Color de texto al pasar el mouse
+                    }
+                }
             }
+        }
+    }
+    
+    .header-button {
+        width: auto; // Ajuste automático según el contenido
+        height: 28px;
+        padding: 0 15px; // Ajustado para el diseño del prototipo
+        background: black;
+        color: white;
+        border: 1px solid black;
+        border-radius: 4px; // Bordes redondeados para consistencia
+        font-family: "Open Sans", sans-serif; // Asegurando la fuente
+        font-weight: 700;
+        font-size: 12px; // Ajustado para el diseño del prototipo
+        text-align: center;
+        cursor: pointer; // Cursor de puntero para botones
+        
+        &:hover {
+            background-color: white; // Cambio de fondo al pasar el mouse
+            color: black; // Cambio de color de texto al pasar el mouse
         }
     }
 }
