@@ -481,16 +481,15 @@ html {
   font-weight: 700;
 }
 
-button, p, h8, h7, h6, h5 {
+#consejos p, #consejos .p, #consejos h8, #consejos .h8, #consejos h7, #consejos .h7, #consejos h6, #consejos .h6, #consejos h5, #consejos .h5, #consejos h2, #consejos .h2 {
   text-align: center;
   display: block;
   margin: auto;
 }
 
-#consejos p, #consejos .p, #consejos h8, #consejos .h8, #consejos h7, #consejos .h7, #consejos h6, #consejos .h6, #consejos h5, #consejos .h5 {
-  text-align: center;
-  display: block;
-  margin: auto;
+#experiencias .d-flex {
+  display: flex;
+  align-items: center;
 }
 
 /* General Styles */
@@ -565,7 +564,7 @@ header .header-button {
   border-style: solid;
   border-radius: 2px;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
@@ -624,7 +623,7 @@ h1 {
 }
 
 h2 {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: left;
   color: #798DA3;
@@ -650,7 +649,7 @@ h3 {
 }
 
 h4 {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   text-align: center;
   color: #798DA3;
@@ -675,7 +674,7 @@ h4 {
   border-style: solid;
   border-radius: 2px;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
@@ -833,22 +832,96 @@ h4 {
   background-color: #DFEDD6;
   width: 100%;
   padding: 50px 25px;
-  /* .card {
-     background-color: map-get($colors, white);
-     border: none;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     border-radius: 8px;
-     margin-bottom: 20px;
-     height: 200px;
-     width: 100%;
-   }*/
+}
+#experiencias h2 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 15px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+}
+#experiencias h5 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 24px;
+  color: #3B4754;
+  font-weight: 700;
+  line-height: 1.2;
+  width: 510px;
+  height: 31px;
+}
+#experiencias h6 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 15px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias h7 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 24px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 510px;
+  height: 31px;
+}
+#experiencias h8 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 15px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias p {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 13px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  height: 20px;
+}
+#experiencias button {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 13px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100px;
+  height: 28px;
 }
 #experiencias .card {
-  width: 300px;
-  height: auto;
-  background-color: #fff;
+  background-color: #ffffff;
+  border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  margin-bottom: 20px;
+  height: 200px;
+  width: 100%;
   overflow: hidden;
   margin: 20px;
   transition: transform 0.3s ease;
@@ -856,133 +929,49 @@ h4 {
 #experiencias .card:hover {
   transform: translateY(-5px);
 }
-#experiencias .card-header {
-  background-color: #eee;
-  padding: 15px;
-  font-size: 18px;
-  font-weight: bold;
-}
 #experiencias .card-body {
-  padding: 15px;
-  font-size: 16px;
-  color: #333;
-}
-#experiencias .card-footer {
-  background-color: #fafafa;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
+  padding: 20px;
+  overflow: auto;
 }
 #experiencias .quote {
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
+  margin-top: 10px;
   color: #333;
+  font-weight: bold;
+  font-size: 15px;
 }
 #experiencias .rounded-circle {
   width: 50px;
   height: 50px;
 }
-#experiencias .d-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
 #experiencias .ml-3 {
   margin-left: 15px;
 }
 #experiencias .name {
-  font-weight: bold;
-  color: #333;
   margin: 0;
+  color: #3B4754;
+  font-weight: bold;
 }
 #experiencias .profession {
-  color: #666;
   margin: 0;
+  color: #666;
+  font-weight: normal;
   font-size: 14px;
-}
-
-h5 {
-  font-family: "Open Sans";
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #3B4754;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 510px;
-  height: 31px;
-}
-
-h6 {
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #798DA3;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 470px;
-  height: 51px;
-}
-
-h7 {
-  font-family: "Open Sans";
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #3B4754;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 510px;
-  height: 31px;
-}
-
-h8 {
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #798DA3;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 470px;
-  height: 51px;
-}
-
-p {
-  font-family: "Open Sans";
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #798DA3;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 470px;
-  height: 51px;
-}
-
-button {
-  font-family: "Open Sans";
-  font-size: 10px;
-  font-weight: 700;
-  color: #ffffff;
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 100px;
-  height: 28px;
 }
 
 #consejos {
   width: 1440px;
   height: 1024px;
   background: #ffffff;
+}
+
+#consejos h2, #consejos .h2 {
+  font-family: "Open Sans";
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  margin: auto;
 }
 
 #consejos h5, #consejos .h5 {
@@ -1000,7 +989,7 @@ button {
 
 #consejos h6, #consejos .h6 {
   font-family: "Open Sans";
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
   color: #798DA3;
@@ -1026,7 +1015,7 @@ button {
 
 #consejos h8, #consejos .h8 {
   font-family: "Open Sans";
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
   color: #798DA3;
@@ -1046,13 +1035,12 @@ button {
   text-align: center;
   display: block;
   margin: auto;
-  width: 470px;
-  height: 51px;
+  height: 20px;
 }
 
 #consejos button, #consejos .button {
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
@@ -1068,7 +1056,7 @@ button {
   border-style: solid;
   border-radius: 2px;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
@@ -1115,7 +1103,7 @@ footer {
   border-style: solid;
   border-radius: 2px;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   color: #ffffff;
   text-align: center;

@@ -478,6 +478,11 @@ $colors: (
   background: #DFEDD6,
   white: #ffffff,
   black: #000000,
+  text: #3B4754,
+  subtext: #798DA3,
+  card: #ffffff,
+  quote: #333,
+  profession: #666,
   "h5": #3B4754,
   "h6": #798DA3,
   "h7": #3B4754,
@@ -489,12 +494,13 @@ $colors: (
 
 $font-stack: 'Open Sans', sans-serif;
 $font-sizes: (
+  "h2": 15px,
   "h5": 24px,
-  "h6": 13px,
+  "h6": 15px,
   "h7": 24px,
-  "h8": 13px,
+  "h8": 15px,
   "p": 13px,
-  "button": 10px
+  "button": 13px
 );
 
 $line-heights: (
@@ -502,7 +508,7 @@ $line-heights: (
   "h6": 1.5,
   "h7": 1.2,
   "h8": 1.5,
-  "p": 1.5
+  "p": 1.5,
 );
 
 $font-weights: (
@@ -519,7 +525,6 @@ $widths: (
   "h6": 470px,
   "h7": 510px,
   "h8": 470px,
-  "p": 470px,
   "img": 426px,
   "button": 100px,
   "div": calc(33.33% - 20px)
@@ -530,7 +535,7 @@ $heights: (
   "h6": 51px,
   "h7": 31px,
   "h8": 51px,
-  "p": 51px,
+  "p": 20px,
   "img": 102px,
   "button": 28px
 );
@@ -570,6 +575,17 @@ $heights: (
     display: block;
     margin: auto;
   }
+ @mixin text-style($size) {
+    font-family: "Open Sans";
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-size: map-get($font-sizes, $size);
+  }
+  
+  @mixin card-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 /* Extend */
 %default-text {
   font-family: $font-stack;
@@ -590,6 +606,11 @@ $heights: (
     text-align: center;
     display: block;
     margin: auto;
+  }
+
+  %flex-center {
+    display: flex;
+    align-items: center;
   }
 /* General Styles */
 * {
@@ -700,9 +721,9 @@ main {
   // Header Styles
   @each $heading, $styles in (
     h1: (30px, 1.3, left, map-get($colors, primary), 347px, 40px),
-    h2: (12px, 1.5, left, map-get($colors, secondary), 347px, 55px),
+    h2: (14px, 1.5, left, map-get($colors, secondary), 347px, 55px),
     h3: (24px, 1.2, center, map-get($colors, primary), 510px, 31px),
-    h4: (13px, 1.5, center, map-get($colors, secondary), 470px, 51px)
+    h4: (15px, 1.5, center, map-get($colors, secondary), 470px, 51px)
   ) {
     #{$heading} {
       font-size: nth($styles, 1);
@@ -875,51 +896,46 @@ main {
   width: 100%;
   padding: 50px 25px;
 
- /* .card {
-    background-color: map-get($colors, white);
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 20px;
-    height: 200px;
-    width: 100%;
-  }*/
-  .card {
-    width: 300px; 
-    height: auto; 
-    background-color: #fff; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 8px; 
-    overflow: hidden; 
-    margin: 20px;
-    transition: transform 0.3s ease;
-  
-    &:hover {
-      transform: translateY(-5px); 
+  @each $tag, $size in $font-sizes {
+    #{$tag} {
+      @include text-style($tag);
+      color: if($tag == h5, map-get($colors, text), map-get($colors, subtext));
+      font-weight: if($tag == h5, 700, 400);
+      line-height: if($tag == h5, 1.2, 1.5);
+      width: map-get($widths, $tag);
+      height: map-get($heights, $tag); 
     }
   }
-  .card-header {
-    background-color: #eee; 
-    padding: 15px; 
-    font-size: 18px; 
-    font-weight: bold; 
+
+  .card {
+    background-color: map-get($colors, card);
+    border: none;
+    @include card-shadow;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px; 
+    width: 100%;
+    overflow: hidden; 
+    margin: 20px; 
+    transition: transform 0.3s ease; 
+    
+      &:hover {
+        transform: translateY(-5px); 
+      }
   }
+
   .card-body {
-    padding: 15px; 
-    font-size: 16px; 
-    color: #333;
-  }
-  .card-footer {
-    background-color: #fafafa; 
-    padding: 10px; 
-    text-align: center; 
-    font-size: 14px; 
+    padding: 20px;
+    overflow: auto;
   }
 
   .quote {
     font-style: italic;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 70px;
+    margin-top: 10px;
+    color: map-get($colors, quote);
+    font-weight: bold;
+    font-size: 15px;
   }
 
   .rounded-circle {
@@ -928,7 +944,7 @@ main {
   }
 
   .d-flex {
-    @include flex-center(row, flex-start, center);
+    @extend %flex-center;
   }
 
   .ml-3 {
@@ -936,25 +952,19 @@ main {
   }
 
   .name {
+    margin: 0;
+    color: map-get($colors, text);
     font-weight: bold;
-    color: #333;
-    margin: 0;
   }
-
+  
   .profession {
-    color: #666;
     margin: 0;
+    color: map-get($colors, profession);
+    font-weight: normal;
     font-size: 14px;
   }
+  
 }
-@each $tag, $size in $font-sizes {
-    #{$tag} {
-      @include font-style($tag);
-      width: map-get($widths, $tag);
-      height: map-get($heights, $tag);
-      @extend %centered-text;
-    }
-  }
 
 
   #consejos {
