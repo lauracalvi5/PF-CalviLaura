@@ -1,4 +1,4 @@
-/* Variables */
+/* Variables 
 $primary-color: #3B4754;
 $secondary-color: #798DA3;
 $accent-color: #29323D;
@@ -6,7 +6,7 @@ $background-color: #DFEDD6;
 $white-color: #ffffff;
 $font-stack: 'Open Sans', sans-serif;
 
-/* General Styles */
+/* General Styles 
 * {
     margin: 0;
     padding: 0;
@@ -18,26 +18,28 @@ body {
     margin: 0 auto;
     padding: 0;
     background-color: #f0f0f0;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 header {
-    background-color: #fff;
+    background-color: white;
+    z-index: 10;
+    margin-bottom: 20px;
     width: 100%;
     margin: 0;
-    padding: 10px 20px; // Añadido padding para margen interno
+    padding: 0; 
     text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Sombra para el efecto visual
-    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     .navbar-brand.logo {
         width: 50px;
-        margin-right: 80px;
-        height: auto; // Ajuste automático para mantener proporción
+        margin-right: 584px;
+        height: auto; 
         img {
             width: 100%;
-            height: auto; // Ajuste automático para mantener proporción
+            height: auto; 
         }
     }
     
@@ -48,27 +50,27 @@ header {
             padding: 0;
             display: flex;
             align-items: center;
-            justify-content: center; // Centrado de elementos en nav
+            justify-content: center; 
             
             li {
-                margin-left: 30px; // Ajustado para el diseño del prototipo
+                margin-left: 7.5px; 
                 
                 &:first-child {
-                    margin-left: 0; // Sin margen en el primer elemento
+                    margin-left: 0; 
                 }
                 
                 a {
                     display: block;
-                    padding: 10px 20px; // Ajustado para el diseño del prototipo
+                    padding: 10px 20px; 
                     text-decoration: none;
                     color: #333;
-                    font-family: "Open Sans", sans-serif; // Asegurando la fuente
-                    font-weight: 600; // Peso ajustado
-                    border-radius: 4px; // Bordes redondeados
+                    font-family: "Open Sans", sans-serif; 
+                    font-weight: bold;
+                    border-radius: 4px; 
                     
                     &:hover {
-                        background-color: #ddd; // Color de fondo al pasar el mouse
-                        color: #000; // Color de texto al pasar el mouse
+                        background-color: #ddd; 
+                        color: #000; 
                     }
                 }
             }
@@ -76,22 +78,22 @@ header {
     }
     
     .header-button {
-        width: auto; // Ajuste automático según el contenido
-        height: 28px;
-        padding: 0 15px; // Ajustado para el diseño del prototipo
+        width: auto; 
+        height: 40px;
+        padding: 0 15px; 
         background: black;
         color: white;
         border: 1px solid black;
-        border-radius: 4px; // Bordes redondeados para consistencia
-        font-family: "Open Sans", sans-serif; // Asegurando la fuente
+        border-radius: 4px; 
+        font-family: "Open Sans", sans-serif; 
         font-weight: 700;
-        font-size: 12px; // Ajustado para el diseño del prototipo
+        font-size: 12px; 
         text-align: center;
-        cursor: pointer; // Cursor de puntero para botones
+        cursor: pointer; 
         
         &:hover {
-            background-color: white; // Cambio de fondo al pasar el mouse
-            color: black; // Cambio de color de texto al pasar el mouse
+            background-color: white; 
+            color: black; 
         }
     }
 }
@@ -111,6 +113,7 @@ main {
     color: #fff;
     text-align: center;
     margin-right: 15px;
+    margin-top: 0px;
 
     .portada-header-text {
         display: flex;
@@ -157,10 +160,8 @@ h2 {
     width: 188px;
     height: 42px;
     padding: 0 10px;
-    background: #29323D;
+    background: black;
     color: #FFFFFF;
-    border: 1px solid #29323D;
-    border-radius: 21px;
     font-family: "Open Sans";
     font-weight: 700;
     font-size: 12px;
@@ -437,6 +438,10 @@ footer {
     column-count: 1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @media (min-width: 576px) {
     .card-columns {
         column-count: 2;
@@ -459,4 +464,545 @@ footer {
     .card-columns {
         column-count: 5;
     }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+} */
+ 
+/* Variables */
+$colors: (
+  primary: #3B4754,
+  secondary: #798DA3,
+  accent: #29323D,
+  background: #DFEDD6,
+  white: #ffffff,
+  black: #000000,
+  "h5": #3B4754,
+  "h6": #798DA3,
+  "h7": #3B4754,
+  "h8": #798DA3,
+  "p": #798DA3,
+  "button": #ffffff,
+  "button-bg": #000000
+);
+
+$font-stack: 'Open Sans', sans-serif;
+$font-sizes: (
+  "h5": 24px,
+  "h6": 13px,
+  "h7": 24px,
+  "h8": 13px,
+  "p": 13px,
+  "button": 10px
+);
+
+$line-heights: (
+  "h5": 1.2,
+  "h6": 1.5,
+  "h7": 1.2,
+  "h8": 1.5,
+  "p": 1.5
+);
+
+$font-weights: (
+  "h5": 700,
+  "h6": 400,
+  "h7": 700,
+  "h8": 400,
+  "p": 400,
+  "button": 700
+);
+
+$widths: (
+  "h5": 510px,
+  "h6": 470px,
+  "h7": 510px,
+  "h8": 470px,
+  "p": 470px,
+  "img": 426px,
+  "button": 100px,
+  "div": calc(33.33% - 20px)
+);
+
+$heights: (
+  "h5": 31px,
+  "h6": 51px,
+  "h7": 31px,
+  "h8": 51px,
+  "p": 51px,
+  "img": 102px,
+  "button": 28px
+);
+
+/* Mixins */
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button-style($bg-color, $text-color, $border-color) {
+  padding: 0px 10px;
+  background: $bg-color;
+  color: $text-color;
+  border-color: $border-color;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  @include font-style("button");
+  &:hover {
+    background-color: $text-color;
+    color: $bg-color;
+  }
+}
+
+  
+
+@mixin font-style($tag) {
+    font-family: "Open Sans";
+    font-size: map-get($font-sizes, $tag);
+    line-height: map-get($line-heights, $tag);
+    font-weight: map-get($font-weights, $tag);
+    color: map-get($colors, $tag);
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+/* Extend */
+%default-text {
+  font-family: $font-stack;
+  color: map-get($colors, primary);
+}
+
+%default-heading {
+  @extend %default-text;
+  font-weight: 700;
+}
+%centered-text {
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+
+ %centered-block {
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @extend %default-text;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f0f0f0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+header {
+  background-color: map-get($colors, white);
+  z-index: 10;
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  @include flex-center(row, space-between, center);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .navbar-brand.logo {
+    width: 50px;
+    margin-right: 570px;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  nav {
+    ul.navbar-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      @include flex-center(row, center, center);
+
+      li {
+        margin-left: 7.5px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        a {
+          display: block;
+          padding: 10px 20px;
+          text-decoration: none;
+          @extend %default-text;
+          font-weight: bold;
+          border-radius: 4px;
+
+          &:hover {
+            background-color: #ddd;
+            color: map-get($colors, black);
+          }
+        }
+      }
+    }
+  }
+
+  .header-button {
+    @include button-style(map-get($colors, black), map-get($colors, white), map-get($colors, black));
+    height: 40px;
+    padding: 0 15px;
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+// Portada Styles
+#portada {
+    background-color: map-get($colors, background);
+    background-size: cover;
+    background-position: center;
+    height: 430px;
+    @include flex-center(row, space-between, center);
+    color: map-get($colors, white);
+    text-align: center;
+    margin: 0; 
+    padding: 0 20px; 
+  
+    .portada-header-text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+      align-items: flex-start;
+    }
+  
+    #portada-img {
+      margin-left: 300px;
+      max-width: 100%;
+      height: auto;
+      margin-top: -1px;
+    }
+  }
+  
+  // Header Styles
+  @each $heading, $styles in (
+    h1: (30px, 1.3, left, map-get($colors, primary), 347px, 40px),
+    h2: (12px, 1.5, left, map-get($colors, secondary), 347px, 55px),
+    h3: (24px, 1.2, center, map-get($colors, primary), 510px, 31px),
+    h4: (13px, 1.5, center, map-get($colors, secondary), 470px, 51px)
+  ) {
+    #{$heading} {
+      font-size: nth($styles, 1);
+      line-height: nth($styles, 2);
+      text-align: nth($styles, 3);
+      color: nth($styles, 4);
+      width: nth($styles, 5);
+      height: nth($styles, 6);
+      font-family: $font-stack;
+      font-weight: if($heading == h1 or $heading == h3, 700, 400);
+      display: block;
+      margin: auto;
+    }
+  }
+  
+  // Additional Portada Styles
+  .portada-column {
+    padding-left: 10px;
+  }
+  
+  .portada-button {
+    @include button-style(map-get($colors, black), map-get($colors, white), map-get($colors, black));
+    width: 188px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0; 
+    padding: 0;
+    position: relative;
+  }
+  
+
+  .portada-button::before {
+    content: none; 
+  }
+  
+  h3 {
+    width: 510px;
+    height: 31px;
+    color: map-get($colors, primary);
+    font-family: $font-stack;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+  
+  h4 {
+    width: 470px;
+    height: 51px;
+    color: map-get($colors, secondary);
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+#destinos {
+  margin-top: 50px;
+}
+
+.image-container {
+  @include flex-center(column, center, center);
+  margin: 0 auto;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  .image-subcontainer {
+    @include flex-center(column, center, center);
+  }
+}
+
+#sydney, #mallorca, #new-york {
+  background: transparent;
+}
+
+#sydney {
+  width: 180px;
+  height: 120px;
+}
+
+#mallorca {
+  width: 182px;
+  height: 121px;
+}
+
+#new-york {
+  width: 182px;
+  height: 122px;
+}
+
+.rectangle-12, .rectangle-11 {
+  width: 96px;
+  height: 3px;
+  padding: 8px;
+  background: #EDF0F4;
+  border-radius: 3px;
+}
+
+.paragraph-2, .paragraph-3 {
+  @extend %default-text;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  color: map-get($colors, secondary);
+}
+
+.paragraph-2 {
+  width: 167px;
+  height: 52px;
+}
+
+.paragraph-3 {
+  width: 178px;
+  height: 17px;
+}
+
+.mallorca, .nueva-york, .sydney {
+  @extend %default-heading;
+  width: 119px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.buscador {
+  max-width: 700px;
+  margin: 30px auto;
+
+  .search-input-box {
+    width: 100%;
+    background-color: #2f3649;
+    border-radius: 5px;
+    position: relative;
+    color: azure;
+    box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+
+    #input {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      height: 55px;
+      padding: 0 30px 0 20px;
+      font-size: 18px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #0d141f;
+    }
+  }
+}
+
+#experiencias {
+  background-color: map-get($colors, background);
+  width: 100%;
+  padding: 50px 25px;
+
+ /* .card {
+    background-color: map-get($colors, white);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 100%;
+  }*/
+  .card {
+    width: 300px; 
+    height: auto; 
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin: 20px;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: translateY(-5px); 
+    }
+  }
+  .card-header {
+    background-color: #eee; 
+    padding: 15px; 
+    font-size: 18px; 
+    font-weight: bold; 
+  }
+  .card-body {
+    padding: 15px; 
+    font-size: 16px; 
+    color: #333;
+  }
+  .card-footer {
+    background-color: #fafafa; 
+    padding: 10px; 
+    text-align: center; 
+    font-size: 14px; 
+  }
+
+  .quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .rounded-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .d-flex {
+    @include flex-center(row, flex-start, center);
+  }
+
+  .ml-3 {
+    margin-left: 15px;
+  }
+
+  .name {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+
+  .profession {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+  }
+}
+@each $tag, $size in $font-sizes {
+    #{$tag} {
+      @include font-style($tag);
+      width: map-get($widths, $tag);
+      height: map-get($heights, $tag);
+      @extend %centered-text;
+    }
+  }
+
+
+  #consejos {
+    width: 1440px;
+    height: 1024px;
+    background: map-get($colors, white);
+  }
+  
+  @each $tag, $size in $font-sizes {
+    #consejos #{$tag}, #consejos .#{$tag} {
+      @include font-style($tag);
+      width: map-get($widths, $tag);
+      height: map-get($heights, $tag);
+      @if $tag == "button" {@include button-style(map-get($colors, "button-bg"), map-get($colors, "button"), map-get($colors, "button-bg"));
+      } @else {
+        @extend %centered-block;
+      }
+    }
+  }
+  
+  #consejos img {
+    width: map-get($widths, "img");
+    height: map-get($heights, "img");
+    object-fit: contain;
+  }
+  
+  #consejos div {
+    box-sizing: border-box;
+    width: map-get($widths, "div");
+    float: left;
+    margin: 10px;
+  }
+  
+  #consejos::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-button {
+  @include button-style(map-get($colors, accent), map-get($colors, white), map-get($colors, accent));
+  height: 40px;
+  padding: 0 15px;
 }
