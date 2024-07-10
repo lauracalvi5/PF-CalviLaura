@@ -1401,6 +1401,10 @@ footer::before {
   gap: 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .card {
