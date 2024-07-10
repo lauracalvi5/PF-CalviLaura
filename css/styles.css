@@ -2,12 +2,13 @@
 /* Variables */
 /* Mixins */
 /* Extend */
-#sobre-nosotros .content p, #sobre-nosotros .section-subtitle, .paragraph-2, .paragraph-3, header nav ul.navbar-nav li a, body, #sobre-nosotros .content h12, #sobre-nosotros .section-title, .mallorca, .nueva-york, .sydney {
+#contacto .contact-info ul li, #contacto .contact-form form input,
+#contacto .contact-form form textarea, #contacto .contact-form form label, #sobre-nosotros .about-us-content p, #sobre-nosotros .content p, #sobre-nosotros .section-subtitle, .paragraph-2, .paragraph-3, header nav ul.navbar-nav li a, body, #consejos .cards, #sobre-nosotros .content h12, #sobre-nosotros .section-title, .mallorca, .nueva-york, .sydney {
   font-family: "Open Sans", sans-serif;
   color: #3B4754;
 }
 
-#sobre-nosotros .content h12, #sobre-nosotros .section-title, .mallorca, .nueva-york, .sydney {
+#consejos .cards, #sobre-nosotros .content h12, #sobre-nosotros .section-title, .mallorca, .nueva-york, .sydney {
   font-weight: 500;
 }
 
@@ -1406,15 +1407,807 @@ html {
 }
 
 /* Ajustes para pantallas pequeñas */
+/* Media Queries para vista móvil */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header .navbar-brand.logo {
+    margin-right: 0;
+  }
+  header nav ul.navbar-nav {
+    flex-direction: column;
+  }
+  header nav ul.navbar-nav li {
+    margin-left: 0;
+  }
+  header nav ul.navbar-nav li a {
+    font-size: 14px;
+  }
+  header .header-button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  main {
+    padding: 10px;
+  }
+  #portada {
+    flex-direction: column;
+    height: auto;
+  }
+  #portada .portada-header-text {
+    margin-left: 0;
+    align-items: center;
+  }
+  #portada #portada-img {
+    margin: 0;
+    width: 100%;
+  }
+  #destinos .row {
+    flex-direction: column;
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  #experiencias .row {
+    flex-direction: column;
+  }
   .card {
-    flex: 1 1 calc(50% - 40px);
+    width: 100%;
+    height: auto;
+  }
+  #consejos .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #sobre-nosotros {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  #sobre-nosotros .content-container {
+    flex-direction: column;
+  }
+  #contacto .form-container {
+    flex-direction: column;
+  }
+  #contacto .form-container .contact-form,
+  #contacto .form-container .contact-info {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
-@media (max-width: 480px) {
-  .card {
-    flex: 1 1 100%;
-  }
+/* Estilos adicionales */
+header {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  max-width: 1350px;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header .navbar-brand.logo {
+  width: 50px;
+  margin-right: 450px;
+  height: auto;
+}
+header .navbar-brand.logo img {
+  width: 100%;
+  height: auto;
+}
+header nav ul.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul.navbar-nav li {
+  margin-left: 15px;
+}
+header nav ul.navbar-nav li:first-child {
+  margin-left: 0;
+}
+header nav ul.navbar-nav li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  font-size: 16px;
+}
+header nav ul.navbar-nav li a:hover {
+  background-color: #ddd;
+  color: #000000;
+}
+header .header-button {
+  padding: 0px 10px;
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  margin: auto;
+  height: 40px;
+  width: 165px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+header .header-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+main {
+  padding: 20px;
+}
+
+#portada {
+  background-color: #DFEDD6;
+  background-size: cover;
+  background-position: center;
+  height: 430px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+}
+#portada .portada-header-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  align-items: flex-start;
+}
+#portada .portada-title {
+  margin-bottom: 20px;
+}
+#portada #portada-img {
+  margin-left: 120px;
+  max-width: 100%;
+  height: auto;
+  margin-top: -1px;
+}
+
+#destinos {
+  margin-top: 50px;
+}
+#destinos .row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.image-container img {
+  margin-bottom: 10px;
+}
+.image-container .image-subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sydney, #mallorca, #new-york {
+  background: transparent;
+}
+
+#sydney {
+  width: 252px;
+  height: 168px;
+}
+
+#mallorca {
+  width: 252px;
+  height: 168px;
+}
+
+#new-york {
+  width: 252px;
+  height: 168px;
+}
+
+.rectangle-12, .rectangle-11 {
+  width: 96px;
+  height: 3px;
+  padding: 8px;
+  background: #EDF0F4;
+  border-radius: 3px;
+}
+
+.mt-2 {
+  font-weight: bold;
+}
+
+.paragraph-2, .paragraph-3 {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  color: #798DA3;
+}
+
+.paragraph-2 {
+  width: 167px;
+  height: 52px;
+}
+
+.paragraph-3 {
+  width: 178px;
+  height: 17px;
+  font-weight: bold;
+}
+
+.mallorca, .nueva-york, .sydney {
+  width: 119px;
+  height: 18px;
+  font-size: 16px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.buscador {
+  max-width: 700px;
+  margin: 30px auto;
+}
+.buscador .search-input-box {
+  width: 100%;
+  background-color: #2f3649;
+  border-radius: 5px;
+  position: relative;
+  color: azure;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+.buscador .search-input-box #input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 55px;
+  padding: 0 30px 0 20px;
+  font-size: 18px;
+}
+.buscador .search-input-box .icon {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0d141f;
+}
+
+#experiencias {
+  background-color: #DFEDD6;
+  width: 100%;
+  padding: 50px 25px;
+}
+#experiencias h2 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h5 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #3B4754;
+  font-weight: 700;
+  line-height: 1.2;
+  width: 510px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h6 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h7 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 510px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h8 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias p {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 13px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  height: 20px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias eco {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias cultura {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias solo {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias seguro {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias presupuesto {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias note {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: auto;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias section-title {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 510px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias section-subtitle {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h13 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 510px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h14 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h15 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 510px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h16 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 17px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 470px;
+  height: 51px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias h17 {
+  font-family: "Open Sans";
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 28px;
+  color: #798DA3;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 300px;
+  height: 31px;
+}
+#experiencias .row {
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#experiencias .card {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 200px;
+  width: 400px;
+  overflow: hidden;
+  margin: 20px;
+  transition: transform 0.3s ease;
+}
+#experiencias .card:hover {
+  transform: translateY(-5px);
+}
+#experiencias .card-body {
+  padding: 20px;
+  overflow: auto;
+}
+#experiencias .quote {
+  margin-bottom: 70px;
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+#experiencias .rounded-circle {
+  width: 50px;
+  height: 50px;
+}
+#experiencias .ml-3 {
+  margin-left: 15px;
+}
+#experiencias .name {
+  margin: 0;
+  color: #3B4754;
+  font-weight: bold;
+}
+#experiencias .profession {
+  margin: 0;
+  color: #798DA3;
+  font-size: 13px;
+}
+
+#consejos {
+  padding: 50px 25px;
+}
+#consejos .cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#consejos .cards {
+  width: 50px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+#sobre-nosotros {
+  background-color: #DFEDD6;
+  padding: 50px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#sobre-nosotros .content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#sobre-nosotros .about-us-content {
+  flex: 1;
+  padding: 0 15px;
+}
+#sobre-nosotros .about-us-content p {
+  margin-bottom: 10px;
+}
+#sobre-nosotros .about-us-image {
+  flex: 1;
+}
+#sobre-nosotros .about-us-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+#contacto {
+  padding: 50px 25px;
+}
+#contacto .form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#contacto .contact-form {
+  flex: 1;
+  margin-right: 25px;
+}
+#contacto .contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+#contacto .contact-form form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#contacto .contact-form form input,
+#contacto .contact-form form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+#contacto .contact-form form textarea {
+  height: 100px;
+  resize: none;
+}
+#contacto .contact-form form .form-group {
+  margin-bottom: 20px;
+}
+#contacto .contact-form form .form-button {
+  padding: 0px 10px;
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-family: "Open Sans";
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+}
+#contacto .contact-form form .form-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+#contacto .contact-info {
+  flex: 1;
+  padding: 20px;
+  background-color: #DFEDD6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#contacto .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+#contacto .contact-info ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+#contacto .contact-info ul li svg {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */
