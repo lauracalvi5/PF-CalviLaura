@@ -18,16 +18,36 @@ $colors: (
   "p": #798DA3,
   "button": #ffffff,
   "button-bg": #000000,
+  "section-title": #3B4754,
+  "section-subtitle": #798DA3,
+  "h13": #3B4754,
+  "h14": #798DA3,
+  "h15": #3B4754,
+  "h16": #798DA3,
+  "h17": #3B4754,
 );
 
 $font-stack: 'Open Sans', sans-serif;
 $font-sizes: (
-  "h2": 15px,
-  "h5": 24px,
-  "h6": 15px,
-  "h7": 24px,
-  "h8": 15px,
+  "h2": 17px,
+  "h5": 28px,
+  "h6": 17px,
+  "h7": 28px,
+  "h8": 17px,
   "p": 13px,
+  "eco": 16px,
+  "cultura": 16px,
+  "solo": 16px,
+  "seguro": 16px,
+  "presupuesto": 16px,
+  "note": 16px,
+  "section-title": 28px,
+  "section-subtitle": 17px,
+  "h13": 28px,
+  "h14": 17px,
+  "h15": 28px,
+  "h16": 17px,
+  "h17": 28px,
 );
 
 $line-heights: (
@@ -36,6 +56,19 @@ $line-heights: (
   "h7": 1.2,
   "h8": 1.5,
   "p": 1.5,
+  "eco": 1.5,
+  "cultura": 1.5,
+  "solo": 1.5,
+  "seguro": 1.5,
+  "presupuesto": 1.5,
+  "note": 1.5,
+  "section-title": 1.2,
+  "section-subtitle": 1.5,
+  "h13": 1.2,
+  "h14": 1.5,
+  "h15": 1.2,
+  "h16": 1.5,
+  "h17": 1.2
 );
 
 $font-weights: (
@@ -45,6 +78,19 @@ $font-weights: (
   "h8": 400,
   "p": 400,
   "button": 700,
+  "eco": 400,
+  "cultura": 400,
+  "solo": 400,
+  "seguro": 400,
+  "presupuesto": 400,
+  "note": 400,
+  "section-title": 700,
+  "section-subtitle": 400,
+  "h13": 700,
+  "h14": 400,
+  "h15": 700,
+  "h16": 400,
+  "h17": 700,
 );
 
 $widths: (
@@ -55,6 +101,19 @@ $widths: (
   "img": 550px,
   "button": 100px,
   "div": calc(33.33% - 20px),
+  "eco": 100%,
+  "cultura": 100%,
+  "solo": 100%,
+  "seguro": 100%,
+  "presupuesto": 100%,
+  "note": 100%,
+  "section-title": 510px,
+  "section-subtitle": 470px,
+  "h13": 510px,
+  "h14": 470px,
+  "h15": 510px,
+  "h16": 470px,
+  "h17": 300px,
 );
 
 $heights: (
@@ -65,6 +124,19 @@ $heights: (
   "p": 20px,
   "img": 150px,
   "button": 28px,
+  "eco": auto,
+  "cultura": auto,
+  "solo": auto,
+  "seguro": auto,
+  "presupuesto": auto,
+  "note": auto,
+  "section-title": 31px,
+  "section-subtitle": 51px,
+  "h13": 31px,
+  "h14": 51px,
+  "h15": 31px,
+  "h16": 51px,
+  "h17": 31px,
 );
 
 /* Mixins */
@@ -75,7 +147,7 @@ $heights: (
   align-items: $align;
 }
 
-@mixin button-style($bg-color, $text-color, $border-color) {
+@mixin button-style($bg-color, $text-color, $border-color, $margin: null) {
   padding: 0px 10px;
   background: $bg-color;
   color: $text-color;
@@ -84,12 +156,15 @@ $heights: (
   border-style: solid;
   border-radius: 2px;
   @include font-style("button");
+  @if $margin != null {
+    margin: $margin;
+  }
   &:hover {
     background-color: $text-color;
     color: $bg-color;
   }
-}
 
+}
   
 
 @mixin font-style($tag) {
@@ -112,6 +187,16 @@ $heights: (
   
   @mixin card-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  }
+
+  @mixin card-styles($type) {
+    color: map-get($colors, $type);
+    font-size: map-get($font-sizes, $type);
+    line-height: map-get($line-heights, $type);
+    font-weight: map-get($font-weights, $type);
+    width: map-get($widths, $type);
+    height: map-get($heights, $type);
   }
 /* Extend */
 %default-text {
@@ -121,7 +206,7 @@ $heights: (
 
 %default-heading {
   @extend %default-text;
-  font-weight: 700;
+  font-weight: 500;
 }
 %centered-text {
     text-align: center;
@@ -133,6 +218,9 @@ $heights: (
     text-align: center;
     display: block;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   %flex-center {
@@ -150,18 +238,17 @@ body {
   @extend %default-text;
   margin: 0 auto;
   padding: 0;
-  background-color: #f0f0f0;
+  background-color: map-get($colors, white);
   animation: fadeIn 0.5s ease-in-out forwards;
   width: 100%; 
-  max-width: 1350x;
+  max-width: 1350px;
 }
 
 header {
-  background-color: map-get($colors, white);
-  z-index: 10;
   position: relative;
   margin-bottom: 1px;
   width: 100%;
+  max-width: 1350px;
   padding: 0;
   text-align: center;
   @include flex-center(row, space-between, center);
@@ -169,7 +256,7 @@ header {
 
   .navbar-brand.logo {
     width: 50px;
-    margin-right: 570px;
+    margin-right: 450px;
     height: auto;
 
     img {
@@ -186,7 +273,7 @@ header {
       @include flex-center(row, center, center);
 
       li {
-        margin-left: 7.5px;
+        margin-left: 15px;
 
         &:first-child {
           margin-left: 0;
@@ -199,6 +286,7 @@ header {
           @extend %default-text;
           font-weight: bold;
           border-radius: 4px;
+          font-size: 16px;
 
           &:hover {
             background-color: #ddd;
@@ -212,6 +300,7 @@ header {
   .header-button {
     @include button-style(map-get($colors, black), map-get($colors, white), map-get($colors, black));
     height: 40px;
+    width: 165px;
     padding: 0 15px;
     font-size: 14px; 
   }
@@ -232,6 +321,7 @@ main {
     text-align: center;
     margin: 0; 
     padding: 0 20px; 
+    
   
     .portada-header-text {
       display: flex;
@@ -239,9 +329,13 @@ main {
       margin-left: 50px;
       align-items: flex-start;
     }
+
+    .portada-title{
+      margin-bottom: 20px;
+    }
   
     #portada-img {
-      margin-left: 287px;
+      margin-left: 120px;
       max-width: 100%;
       height: auto;
       margin-top: -1px;
@@ -250,10 +344,10 @@ main {
   
   // Header Styles
   @each $heading, $styles in (
-    h1: (30px, 1.3, left, map-get($colors, primary), 347px, 40px),
-    h2: (14px, 1.5, left, map-get($colors, secondary), 347px, 55px),
-    h3: (24px, 1.2, center, map-get($colors, primary), 510px, 31px),
-    h4: (15px, 1.5, center, map-get($colors, secondary), 470px, 51px)
+    h1: (35px, 1.2, left, map-get($colors, primary), 510px, 31px),
+    h2: (17px, 1.5, left, map-get($colors, secondary), 470px, 51px),
+    h3: (28px, 1.2, center, map-get($colors, primary), 510px, 31px),
+    h4: (17px, 1.5, center, map-get($colors, secondary), 470px, 51px)
   ) {
     #{$heading} {
       font-size: nth($styles, 1);
@@ -342,6 +436,10 @@ main {
   border-radius: 3px;
 }
 
+.mt-2 {
+  font-weight: bold;
+}
+
 .paragraph-2, .paragraph-3 {
   @extend %default-text;
   font-weight: 400;
@@ -359,6 +457,7 @@ main {
 .paragraph-3 {
   width: 178px;
   height: 17px;
+  font-weight: bold;
 }
 
 .mallorca, .nueva-york, .sydney {
@@ -448,7 +547,6 @@ main {
   }
 
   .quote {
-    font-style: italic;
     margin-bottom: 70px;
     margin-top: 10px;
     color: map-get($colors, quote);
@@ -484,219 +582,421 @@ main {
   
 }
 
+/* Consejos Section */
+#consejos {
+  position: relative;
+  
+  h5 {
+    @include font-style("h5");
+  }
 
-  #consejos {
-    margin: 0 auto;
-    padding: 20px
-  }  
-    
-    @each $tag, $size in $font-sizes {
-    #consejos #{$tag}, #consejos .#{$tag} {
-      @include font-style($tag);
-      width: map-get($widths, $tag);
-      height: map-get($heights, $tag);
-      @if $tag == "button" {@include button-style(map-get($colors, "button-bg"), map-get($colors, "button"), map-get($colors, "button-bg"));
-      } @else {
-        @extend %centered-block;
+  h6 {
+    @include font-style("h6");
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px; 
+    justify-content: space-around; 
+  }
+  .card {
+    @include card-shadow;
+    flex: 1 1 calc(33.333% - 20px); 
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: none;
+    margin: 10px 0;
+    max-width: 350px;
+    background-color: transparent;
+    .card-img-top {
+      @extend %centered-block;
+      width: 100%;
+      height: auto;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .card-body {
+      padding: 10px;
+      text-align: center;
+      p {
+        @include font-style("p");
+        width: map-get($widths, "p");
+        height: map-get($heights, "p");
+      }
+
+      button {
+        @include button-style(map-get($colors, "button-bg"), map-get($colors, "button"), map-get($colors, "button-bg"));
+        width: map-get($widths, "button");
+        height: map-get($heights, "button");
+        margin-top: 50px;
       }
     }
-  }
-  
-  #consejos img {
-    width: map-get($widths, "img");
-    height: map-get($heights, "img");
-    object-fit: contain;
-    margin-left: -70px;
-  }
-  
-  #consejos div {
-    box-sizing: border-box;
-    width: map-get($widths, "div");
-    float: left;
-    margin: 10px;
-    p {
-      max-width: 50%;
+ 
+
+    @each $type, $color in $colors {
+      .#{"#{$type}"} {
+        @include card-styles($type);
+      }
     }  
   }
+}
 
- 
-  
-  #consejos::after {
-    content: "";
-    display: table;
-    clear: both;
+/* Sobre Nosotros */
+#sobre-nosotros {
+  @extend %centered-block;
+  width: 100vw;
+  padding: 0 40px 0 0; 
+  margin-left: -20px;
+  box-sizing: border-box;
+  background: map-get($colors, background);
+  position: relative;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: start;
+
+  .content-container {
+    width: calc(100% - 0px); 
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .section-title {
+    @extend %default-heading;
+    @include font-style("section-title");
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    order: 1;
   }
 
- /* #sobre-nosotros {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #DFEDD6;
-    width: 100%;
-
-}
-
-
-#sobre-nosotros h9 {
-    font-weight: 700;
-    font-size: 48px;
-    color: #3B4754;
-    display: block;
+  .section-subtitle {
+    @extend %default-text;
+    @include font-style("section-subtitle");
     text-align: center;
-}
+    margin-bottom: 40px;
+    order: 2;
+  }
+  
+  .content {
+    order: 3;
+    h12 {
+      @extend %default-heading;
+      @include font-style("section-title");
+      font-size: 15px;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
 
-#sobre-nosotros h10 {
-    font-weight: 400;
-    font-size: 20px;
-    color: #798DA3;
-    display: block;
-    text-align: center;
-}
+    p {
+      @extend %default-text;
+      @include font-style("p");
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+  }
+ }
 
-#sobre-nosotros h11 {
-    font-weight: 700;
-    font-size: 24px;
-    color: #3B4754;
-    display: block;
-}
-
-#sobre-nosotros p {
-    font-weight: 400;
-    font-size: 16px;
-    color: #3B4754;
-}
-
-#sobre-nosotros h12 {
-    font-weight: 700;
-    font-size: 24px;
-    color: #3B4754;
-}
-
-#sobre-nosotros h13 {
-    font-weight: 700;
-    font-size: 24px;
-    color: #3B4754;
-}
+/* Contacto */
 #contacto {
-    position: relative;
-    width: 705px;
-    height: 633px;
-    background: #DFEDD6;
-    border: 2px solid #829A73;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    padding: 20px;
-}
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-#contacto h1 {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 150%;
-    color: #3B4754;
-}
-
-#contacto p {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 150%;
-    color: #798DA3;
-    text-align: center;
-}
-
-#contacto .input-field {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 295px;
-    height: 83px;
-}
-
-#contacto button {
-    width: 188px;
-	height: 42px;
-	padding: 0px 10px 0px 10px;
-	background: #29323D;
-	color: #FFFFFF;
-	border-color: #29323D;
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 21px 21px 21px 21px;
-	font-family: "Open Sans";
-	font-weight: 700;
-	font-size: 12px;
-	text-align: center;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-p {
+  h13 {
+    @include font-style("h13");
     margin-bottom: 10px;
-}
+  }
 
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-aside {
-    float: right;
-    width: 25%;
-    padding: 20px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
+  h14 {
+    @include font-style("h14");
     margin-bottom: 5px;
-}
+  }
 
-input[type="text"],
-input[type="email"] {
+  .h14 {
+    @include font-style("h14");
+    margin-bottom: 40px;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    max-width: 1200px;
+    gap: 5px;
+
+    .contact-form {
+      order: 1;
+      flex: 2.5;
+      background: map-get($colors, background);
+      border: 2px solid #829A73;
+      @include card-shadow;
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 600px;
+      
+    }
+    .contact-info {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1.5;
+      background: map-get($colors, background);
+      border: 2px solid #829A73;
+      @include card-shadow;
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 600px;
+      
+      .info-item:last-child {
+        margin-top: 40px; 
+      }
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        i {
+          font-size: 20px;
+          color: map-get($colors, primary);
+          margin-right: 15px;
+        }
+
+        span {
+          @include font-style("p");
+          color: map-get($colors, primary);
+          font-size: 16px;
+        }
+      }
+
+      .info-item i {
+        margin-right: 8px; 
+      }
+    }
+
+      h15 {
+        @include font-style("h15");  
+        width: map-get($widths, "h15");
+        height: map-get($heights, "h15");
+        justify-content: left;
+        margin-left: -105px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+      }
+      h16 {
+        @include font-style("h16");  
+        width: map-get($widths, "h16");
+        height: map-get($heights, "h16");
+        margin-left: -1px;
+        white-space: nowrap;
+        
+      }
+
+      h17 {
+        position: relative;
+        @include font-style("h17");
+        width: map-get($widths, "h17");
+        height: map-get($heights, "h17");
+        margin-bottom: 70px;
+        margin-top: 30px
+      }
+
+      h17::after {
+        content: ""; 
+        display: block;
+        width: 130%; 
+        height: 1px; 
+        background-color: #798DA3;
+        position: absolute;
+        bottom: -40px; 
+        left: 50%; 
+        transform: translateX(-50%);
+      }
+
+      p {
+        @include font-style("p");
+        margin-bottom: 20px;
+        margin-top: 0px;
+      }
+
+      form {
+
+          label {
+            font-family: $font-stack;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            color: map-get($colors, primary);
+            margin-bottom: 5px;
+          }
+
+          input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #829A73;
+            border-radius: 4px;
+            font-family: $font-stack;
+            font-size: 16px;
+            color: map-get($colors, primary);
+          }
+
+          textarea {
+            height: 100px;
+            resize: vertical;
+          }
+        }   
+        
+        .button-container {
+          display: flex;
+          justify-content: flex-end;
+          width: 100%;
+          margin-top: 40px;
+          
+            button {
+              @include button-style(#000, #fff, #000, "0 0 0 auto");
+              width: map-get($widths, "button");
+              height: map-get($heights, "button");
+              cursor: pointer;
+              margin: 0;
+            }
+        }
+      }
+    }
+
+    .form-row, .contact-row {
+      display: flex;
+      justify-content: start;
+      gap: 10px;
+    
+      .input-field {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px; 
+      }
+    }
+    
+    .contact-row {
+      margin-top: 20px; 
+    }
+    
+   #nombre, #apellido, #telefono, #email{
+    width: 45%;
+   } 
+   .required {
+    color: red;
+  }
+
+/*Newsletter */
+.newsletter-container {
+  position: relative;
+  width: 100%;
+  max-width: 1450px; 
+  margin: auto; 
+  padding: 50px 10px; 
+  background: map-get($colors, background);
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.rectangle {
+  width: 100%;
+  max-width: 1450px;
+  background: map-get($colors, background);
 }
-*/
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+  
+    button {
+      @include button-style(#000, #fff, #000, "0 0 0 auto");
+      width: 247px;
+      height: 52px; 
+      cursor: pointer;
+    }
+}
+
+.newsletter-title {
+  @include font-style("h5");
+  width: map-get($widths, "h5");
+  height: map-get($heights, "h5");
+  margin: 0 auto; 
+  margin-top: 20px;
+}
+
+.newsletter-subtitle {
+  @include font-style("h6");
+  width: map-get($widths, "h6");
+  height: map-get($heights, "h6");
+  margin: 20px auto 0; 
+}
+
+#nombre2, #email2{
+  width: calc(50% - 5px);
+ } 
+
+#nombre2 {
+  margin-left: auto;
+}
+.form-label1 {
+  margin-left: 340px;
+}
+
+  
 footer {
-  background-color: #333;
-  color: #fff;
+  position: relative; 
+  margin-top: 40px;
+  background-color: map-get($colors, white);
+  color: #798DA3;
   text-align: center;
   padding: 20px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 1200px; 
+    border-top: 1px solid #798DA3;
+    transform: translateX(-50%); 
+  }
 }
 
-.footer-button {
-  @include button-style(map-get($colors, accent), map-get($colors, white), map-get($colors, accent));
-  height: 40px;
-  padding: 0 15px;
+
+.footer-container {
+  display: flex;
+  align-items: center; 
+  gap:  200px;
+  margin-left: 250px;
+}
+
+.social-icons {
+  font-size: 24px; 
+  display: flex; 
+  gap: 20px;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 40px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; 
+  }
 }

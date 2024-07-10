@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,272 +11,342 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/598c716069.js" crossorigin="anonymous"></script>
-</head>
 
- <!-- Navbar -->
- <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand logo" href="#">
-            <img src="img/Logotipo Turismo Minimalista Blanco.png" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-autoS">
-                <li class="nav-item"><a class="nav-link" href="#destinos">Destinos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#experiencias">Experiencias</a></li>
-                <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="inciarsesion.html"><button class="btn btn-light header-button">Iniciar Sesión</button></a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <!-- SEO -->
+    <meta name="description" content="Blog de Viajes: Encuentra los mejores destinos y recomendaciones en un solo lugar">
+    <meta name="keywords" content="viajes, destinos, turismo, consejos de viaje, experiencias de viaje">
+    <meta name="author" content="TripTip">
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+</head>
 <body>
-<!-- Sección Portada -->
-<section id="portada" class="d-flex align-items-center justify-content-center text-center portada-section">
-    <div class="container portada-container">
-        <div class="row portada-row">
-            <div class="col-lg-8 col-md-10 mx-auto portada-column">
-                <div class="header-text portada-header-text"> 
-                    <h1 class="font-weight-bold portada-title">Blog De Viajes</h1>
-                    <h2 class="text-muted portada-subtitle">Encuentra los mejores destinos recomendaciones en un solo lugar</h2>
-                    <nav>
-                        <ul>
-                            <li><a href="registrate.html" class="btn btn-primary mt-4 portada-button">Registrate</a></li>
-                        </ul>
-                    </nav>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand logo" href="#">
+                <img src="img/Logotipo Turismo Minimalista Blanco.png" alt="Logotipo de TripTip">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#destinos">Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencias">Experiencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><button class="btn btn-light header-button">Iniciar Sesión</button></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Portada -->
+    <section id="portada" class="d-flex align-items-center justify-content-center text-center portada-section">
+        <div class="container portada-container">
+            <div class="row portada-row">
+                <div class="col-lg-8 col-md-10 mx-auto portada-column">
+                    <div class="header-text portada-header-text">
+                        <h1 class="font-weight-bold portada-title">Blog De Viajes</h1>
+                        <h2 class="text-muted portada-subtitle">Encuentra los mejores destinos y recomendaciones en un solo lugar</h2>
+                        <nav>
+                            <ul>
+                                <li><a href="#" class="btn btn-primary mt-4 portada-button">Registrate</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <img src="img/contratar-agencia-de-viajes.jpg" id="portada-img" class="img-fluid portada-img" alt="img">
-    <a href="index.html" class="portada-link"></a>
-</section>
-<!-- Sección Destinos -->
-<section id="destinos" class="container">
-    <div class="row">
-        <div class="col-12">
-            <h3>Destinos</h3>
-            <h4>Los destinos mas elegidos por los Viajeros</h4>
+        <img src="img/contratar-agencia-de-viajes.jpg" id="portada-img" class="img-fluid portada-img" alt="Portada">
+        <a href="index.html" class="portada-link"></a>
+    </section>
+
+    <!-- Sección Destinos -->
+    <section id="destinos" class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Destinos</h3>
+                <h4>Los destinos más elegidos por los viajeros</h4>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 image-container">
-            <img src="img/Statue-of-Liberty-Island-New-York-Bay.webp" id="new-york" alt="img" class="img-fluid">
-            <p class="nueva-york">Nueva York</p>
-            <p class="paragraph-3"></p>
-            <div class="rectangle-12"></div>
+        <div class="row mt-4">
+            <div class="col-sm-4 image-container">
+                <img src="img/Statue-of-Liberty-Island-New-York-Bay.webp" id="new-york" alt="Nueva York" class="img-fluid">
+                <p class="text-center mt-2">Nueva York</p>
+            </div>
+            <div class="col-sm-4 image-container">
+                <img src="img/Vista-de-Palma-de-Mallorca-desde-el-puerto.jpg" id="mallorca" alt="Mallorca" class="img-fluid">
+                <p class="text-center mt-2">Mallorca</p>
+            </div>
+            <div class="col-sm-4 image-container">
+                <img src="img/54fdb73f-eee5-4612-a3e7-6fc7ed2f7bee.webp" id="sydney" alt="Sydney" class="img-fluid">
+                <p class="text-center mt-2">Sydney</p>
+            </div>
         </div>
-        <div class="col-sm-4 image-container">
-            <img src="img/Vista-de-Palma-de-Mallorca-desde-el-puerto.jpg" id="mallorca" alt=" img" class="img-fluid">
-            <p class="mallorca">Mallorca</p>
-            <p class="paragraph-2"></p>              
-            <div class="rectangle-11"></div>
-        </div>
-        <div class="col-sm-4 image-container">
-            <img src="img/54fdb73f-eee5-4612-a3e7-6fc7ed2f7bee.webp" id="sydney" alt="img" class="img-fluid">
-            <p class="sydney">Sydney</p>
-            <p class="paragraph-2"></p>
-        </div>
-    </div>
-       <!-- Buscador -->
-       <div class="row">
-        <div class="col-12">
-            <div class="buscador">
-                <div class="search-input-box">
-                    <input type="text" id="input" placeholder="Buscar destinos...">
-                    <a href="#">
-                        <i class="fa-solid fa-magnifying-glass icon"></i>
-                    </a>
+        <!-- Buscador -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <div class="buscador">
+                    <div class="search-input-box">
+                        <input type="text" id="input" placeholder="Buscar destinos...">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass icon"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>         
-<!-- Sección Experiencias -->
-<section id="experiencias" class="container-fluid mt-5">
-    <h5>Experiencias</h5>
-    <h6>Sumérgete en Aventuras Únicas: Historias Inspiradoras de Viajeros Reales</h6>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <p class="quote">“¡Increíble trekking por el Gran Cañón! Vistas impresionantes, vale la pena cada paso.”</p>
-                    <div class="d-flex align-items-center">
-                        <img src="img/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png" alt="Avatar" class="rounded-circle">
-                        <div class="ml-3">
-                            <p class="name">María López</p>
-                            <p class="profession">Viajera</p>
+    </section>
+
+    <!-- Sección Experiencias -->
+    <section id="experiencias" class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h5>Experiencias</h5>
+                <h6>Sumérgete en Aventuras Únicas: Historias Inspiradoras de Viajeros Reales</h6>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="quote">“¡Increíble trekking por el Gran Cañón! Vistas impresionantes, vale la pena cada paso.”</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png" alt="Avatar de María López" class="rounded-circle">
+                            <div class="ml-3">
+                                <p class="name">María López</p>
+                                <p class="profession">Viajera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="quote">“Visitar el Coliseo en Roma fue genial. La historia que se respira en cada piedra es asombrosa.”</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img/png-transparent-male-avatar-boy-face-man-user-flat-classy-users-icon.png" alt="Avatar de Juan Pérez" class="rounded-circle">
+                            <div class="ml-3">
+                                <p class="name">Juan Pérez</p>
+                                <p class="profession">Arqueólogo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="quote">"¡Cancún: Paraíso tropical con playas impresionantes de aguas cristalinas y arena blanca!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="img/pngwing.com.png" alt="Avatar de Sara García" class="rounded-circle">
+                            <div class="ml-3">
+                                <p class="name">Sara García</p>
+                                <p class="profession">Bióloga</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <p class="quote">“Visitar el Coliseo en Roma fue genial. La historia que se respira en cada piedra es asombrosa.”</p>
-                    <div class="d-flex align-items-center">
-                        <img src="img/png-transparent-male-avatar-boy-face-man-user-flat-classy-users-icon.png" alt="Avatar" class="rounded-circle">
-                        <div class="ml-3">
-                            <p class="name">Juan Pérez</p>
-                            <p class="profession">Arqueólogo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <p class="quote">"¡Cancún: Paraíso tropical con playas impresionantes de aguas cristalinas y arena blanca!"</p>
-                    <div class="d-flex align-items-center">
-                        <img src="img/pngwing.com.png" alt="Avatar" class="rounded-circle">
-                        <div class="ml-3">
-                            <p class="name">Sara García</p>
-                            <p class="profession">Bióloga</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </section>
+
+   <!-- Sección Consejos -->
+<section id="consejos" class="container mt-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h5>Consejos</h5>
+        <h6>Tu Guía de Expertos para Viajar de Forma Inteligente y Segura</h6>
+      </div>
     </div>
-</section>       
-<!-- Sección Consejos -->
-                <div class="col-sm">
-                    <section id="consejos">
-                        <h7>Consejos</h7>
-                        <h8>Tu Guía de Expertos para Viajar de Forma Inteligente y Segura</h8>
-                        <div >
-                            <img src="img/eco.png" alt="articulo">
-                            <p>Descubre cómo minimizar tu huella ambiental mientras viajas, adoptando prácticas sostenibles y respetuosas con el medio ambiente en tus aventuras.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                    
-                        <div>
-                            <img src="img/cultura.png" alt="articulo">
-                            <p>Sumérgete en la riqueza cultural del mundo y aprende cómo mostrar respeto y comprensión hacia diferentes costumbres y tradiciones mientras viajas.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                    
-                        <div>
-                            <img src="img/solo.png" alt="articulo">
-                            <p>Descubre los beneficios y desafíos del viaje en solitario, junto con consejos útiles para aprovechar al máximo tu tiempo como viajero independiente.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                    
-                        <div>
-                            <img src="img/seguro.png" alt="articulo">
-                            <p>Aprende las mejores prácticas de seguridad y cómo protegerte a ti mismo y tus pertenencias mientras exploras destinos desconocidos.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                    
-                        <div>
-                            <img src="img\presupuesto.png" alt="articulo">
-                            <p>Explora estrategias y consejos prácticos para viajar con un presupuesto limitado, maximizando tu experiencia sin gastar de más.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                        <div>
-                            <img src="img/EDITOR’s NOTE.png" alt="articulo">
-                            <p>Descubre cómo optimizar tu equipaje y empacar de manera inteligente para tus próximas aventuras, eliminando el estrés del proceso de preparación.</p>
-                            <button class="button">Leer más</button>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-sm">
-                    <section id="sobre-nosotros">
-                        <div class="SN-text"> 
-                            <h9>Sobre Nosotros</h9>
-                            <h10>Descubre mas sobre nuestra hitoria!</h10>
-                            <h11>¡Bienvenidos a TripTip!</h11>
-                            <p>Somos un equipo apasionado de viajeros que busca inspirar a otros a explorar el mundo y vivir experiencias inolvidables. En nuestro blog, compartimos historias, consejos útiles y recomendaciones de destinos para ayudarte a planificar tus próximas aventuras.</p>
-                            <h12>Equipo:</h12>
-                            <p>Laura Rodríguez - Fundadora y Editora Jefe:
-                                Laura es una viajera empedernida con una pasión por descubrir nuevos destinos y culturas. Ha recorrido más de 30 países y comparte sus experiencias a través de artículos inspiradores y detallados en el blog. Cuando no está viajando, puedes encontrarla planeando su próximo viaje o explorando su ciudad natal en busca de nuevas experiencias.
-                                Carlos Martínez - Fotógrafo y Redactor:
-                                Carlos es el genio detrás de las impresionantes imágenes que acompañan nuestras historias de viaje. Con un ojo para la composición y la luz, captura la esencia de cada destino y la comparte con nuestros lectores. Además de la fotografía, Juan también contribuye con artículos sobre destinos y consejos de viaje.
-                                María Gómez - Community Manager:
-                                María se encarga de mantenernos conectados con nuestra comunidad en las redes sociales. Con una sólida experiencia en marketing digital y una pasión por los viajes, María trabaja para mantenernos comprometidos con nuestros seguidores y crear una comunidad en línea vibrante y activa.
-                                </p>
-                            <h13>Únete a Nosotros en Nuestras Aventuras:</h13>
-                            <p>Síguenos en nuestras redes sociales para mantenerte al día con nuestras últimas publicaciones, consejos de viaje y ofertas especiales. ¡Nos encantaría tenerte en nuestra comunidad de viajeros!</p>
-            
-                        </div>
-            
-            
-            
-                    </section>
-                </div>
-                <div class="col-sm">
-                    <section id="contacto">
-                        <h1>Contacto</h1>
-                        <p>¡Nos encantan las preguntas y los comentarios, y siempre estamos felices de ayudar! Aquí tienes algunas formas de contactarnos.</p>
-                        <form>
-                            <div class="input-field">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre" name="nombre">
-                            </div>
-                            <div class="input-field">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-                            <div class="input-field">
-                                <label for="mensaje">Mensaje</label>
-                                <textarea id="mensaje" name="mensaje"></textarea>
-                            </div>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </section>
-                </div>
-                <div class="col-sm">
-                    <aside>
-                        <form action="#">
-                            <h2>Suscríbete a nuestro Newsletter</h2>
-                            <label for="email">Correo electrónico:</label>
-                            <input type="email" id="email" name="email" required>
-                            <button type="submit">Suscribirme</button>
-                
-                        </form>
-                    </aside>
-                    <footer>
-                        <p>&copy; 2024 Blog de Viajes</p>
-                        <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
-                        </ul>
-                    </footer>
-                <aside>
-                    <form action="#">
-                        <h2>Suscríbete a nuestro Newsletter</h2>
-                        <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                        <button type="submit">Suscribirme</button>
-            
-                    </form>
-                </aside>
-                <footer>
-                    <p>&copy; 2024 Blog de Viajes</p>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </footer>
+    <div class="row mt-4 cards-container">
+      <div class="card eco">
+        <img src="img/eco.png" alt="articulo" class="card-img-top">
+        <div class="card-body">
+          <p>Descubre cómo minimizar tu huella ambiental mientras viajas, adoptando prácticas sostenibles y respetuosas con el medio ambiente en tus aventuras.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+      <div class="card cultura">
+        <img src="img/cultura.png" alt="articulo" class="card-img-top">
+        <div class="card-body">
+          <p>Sumérgete en la riqueza cultural del mundo y aprende cómo mostrar respeto y comprensión hacia diferentes costumbres y tradiciones mientras viajas.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+      <div class="card solo">
+        <img src="img/solo.png" alt="articulo" class="card-img-top">
+        <div class="card-body">
+          <p>Descubre los beneficios y desafíos del viaje en solitario, junto con consejos útiles para aprovechar al máximo tu tiempo como viajero independiente.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+      <div class="card seguro">   
+        <img src="img/seguro.png" alt="articulo" class="card-img-top">
+        <div class="card-body">
+          <p>Aprende las mejores prácticas de seguridad y cómo protegerte a ti mismo y tus pertenencias mientras exploras destinos desconocidos.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+      <div class="card presupuesto">
+        <img src="img/presupuesto.png" alt="articulo" class="card-img-top"> 
+        <div class="card-body">
+          <p>Explora estrategias y consejos prácticos para viajar con un presupuesto limitado, maximizando tu experiencia sin gastar de más.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+      <div class="card note">
+        <img src="img/EDITOR’s NOTE.png" alt="articulo" class="card-img-top"> 
+        <div class="card-body">
+          <p>Descubre cómo optimizar tu equipaje y empacar de manera inteligente para tus próximas aventuras, eliminando el estrés del proceso de preparación.</p>
+          <button type="button" class="btn btn-primary">Leer más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Sección Sobre Nosotros -->
+<div class="col-sm">
+    <section id="sobre-nosotros">
+        <div class="content-container">
+            <div class="SN-text"> 
+                <h9 class="section-title">Sobre Nosotros</h9>
+                <h10 class="section-subtitle">Conoce al Equipo de Viajeros Apasionados Detrás de TripTip</h10>
+                <div class="content">
+                    <p>Somos un equipo apasionado de viajeros que busca inspirar a otros a explorar el mundo y vivir experiencias inolvidables. En nuestro blog, compartimos historias, consejos útiles y recomendaciones de destinos para ayudarte a planificar tus próximas aventuras.</p>
+                    <h12>Equipo:</h12>
+                    <p><strong><u>Laura Rodríguez - Fundadora y Editora Jefe:</u></strong></p>
+                       <p>Laura es una viajera empedernida con una pasión por descubrir nuevos destinos y culturas. Ha recorrido más de 30 países y comparte sus experiencias a través de artículos inspiradores y detallados en el blog. Cuando no está viajando, puedes encontrarla planeando su próximo viaje o explorando su ciudad natal en busca de nuevas experiencias.</p>
+                    <p><strong><u>Carlos Martínez - Fotógrafo y Redactor:</u></strong></p>
+                        <p>Carlos es el genio detrás de las impresionantes imágenes que acompañan nuestras historias de viaje. Con un ojo para la composición y la luz, captura la esencia de cada destino y la comparte con nuestros lectores. Además de la fotografía, Juan también contribuye con artículos sobre destinos y consejos de viaje.</p>
+                    <p><strong><u>María Gómez - Community Manager:</u></strong></p>
+                       <p> María se encarga de mantenernos conectados con nuestra comunidad en las redes sociales. Con una sólida experiencia en marketing digital y una pasión por los viajes, María trabaja para mantenernos comprometidos con nuestros seguidores y crear una comunidad en línea vibrante y activa.</p>
+                    <h12>Únete a Nosotros en Nuestras Aventuras:</h12>
+                    <p>Síguenos en nuestras redes sociales para mantenerte al día con nuestras últimas publicaciones, consejos de viaje y ofertas especiales. ¡Nos encantaría tenerte en nuestra comunidad de viajeros!</p>
                 </div>
             </div>
         </div>
+    </section>
+</div>
+<!-- Sección Contacto -->
+<div class="col-sm">
+    <section id="contacto">
+      <h13>Contacto</h13>
+      <h14>¡Nos encantan las preguntas y los comentarios, y siempre estamos felices de ayudar!</h14>
+      <h14 class="h14"> Aquí tienes algunas formas de contactarnos.</h14>
+      <div class="form-container">
+        <div class="contact-form">
+          <h15>Envíanos un mensaje</h15>
+          <h16>Envíanos un mensaje y responderemos dentro de las 24 horas.</h16>
+          <form>
+            <div class="form-row">
+            <div class="input-field">
+              <label for="nombre">Nombre <span class="required">*</span></label>
+              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre aquí">
+            </div>
+            <div class="input-field">
+              <label for="apellido">Apellido <span class="required">*</span></label>
+              <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido aquí">
+            </div>
+            </div>
+            <div class="contact-row">
+            <div class="input-field">
+              <label for="telefono">Teléfono <span class="required">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono">
+            </div>
+            <div class="input-field">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="email@address.com">
+            </div>
+            </div>
+            <div class="input-field">
+              <label for="mensaje"></label>
+              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí"></textarea>
+            </div>
+            <div class="button-container">
+            <button>Enviar</button>
+            </div>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h17>Información de contacto</h17>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Avenida Libertador 1234 - CABA - Argentina</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@triptip.com.ar</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+54 9 11 1234</span>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sección Newsletter -->
+  <div class="newsletter-container">
+    <div class="rectangle"></div>
+    <h2 class="newsletter-title text-center">Suscribirte a nuestro Newsletter</h2>
+    <p class="newsletter-subtitle text-center">Recibí todas nuestras novedades en tu correo electrónico</p>
+
+    <div class="form-row">
+    <div class="input-field">
+      <label for="nombre" class="form-label1">Nombre Completo<span class="required">*</span></label>
+      <input type="text" class="form-control" id="nombre2" placeholder="Escribe tu nombre completo aquí">
     </div>
- <!-- Enlace a jQuery y Bootstrap JS -->
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
- <!-- Enlace a nuestro archivo JS personalizado -->
- <script src="script.js"></script>
+    
+    <div class="input-field">
+      <label for="email2" class="form-label">Email<span class="required">*</span></label>
+      <input type="email" class="form-control" id="email2" placeholder="email@address.com">
+    </div>
+    </div>
+    <div class="button-container">
+    <div class="button">
+      <button>QUIERO SUBSCRIBIRME</button>
+    </div>
+    </div>
+  </div>
+  
+  
+    <!-- Footer -->
+    <footer class="container-fluid ">
+        <div class="footer-container">
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <div class="logo">
+            <img src="img/Logotipo Turismo Minimalista Blanco.png" alt="Logotipo de TripTip">
+        </div>
+        <div class="copyright text-center">
+          © 2019 TripTip
+        </div>
+      </div>
+      </div>
+    </footer>
+
+    <!-- Enlace a Bootstrap JS y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
