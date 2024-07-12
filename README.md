@@ -6,8 +6,11 @@ Este proyecto es el desarrollo final para el curso de Desarrollo Web. El objetiv
 <span style="font-size:larger;">**Características Principales**</span>
 
 **Configuración del Hosting:** Utilizamos InfinityFree como servicio de hosting para alojar nuestro sitio web de manera gratuita y eficiente.
+
 **Configuración de HTTPS:** Aseguramos la conexión entre los usuarios y el servidor web utilizando HTTPS.
+
 **Optimización del Rendimiento:** Implementamos técnicas de compresión y caché para mejorar la velocidad y eficiencia del sitio.
+
 **Despliegue y Monitoreo:** Desplegamos el sitio en InfinityFree y configuramos herramientas de monitoreo para asegurar su correcto funcionamiento y rendimiento.
 
 **Tecnologías Utilizadas**
